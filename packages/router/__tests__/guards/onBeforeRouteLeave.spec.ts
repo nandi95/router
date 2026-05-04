@@ -1,12 +1,10 @@
 /**
  * @vitest-environment happy-dom
  */
-import {
-  createRouter,
-  createMemoryHistory,
-  onBeforeRouteLeave,
-  type RouteRecordRaw,
-} from '../../src'
+import { createRouter } from '../../src/router'
+import { createMemoryHistory } from '../../src/history/memory'
+import { onBeforeRouteLeave } from '../../src/navigationGuards'
+import type { RouteRecordRaw } from '../../src/types'
 import { createApp, defineComponent, onActivated, onDeactivated } from 'vue'
 import { mount } from '@vue/test-utils'
 import { vi, describe, expect, it } from 'vitest'

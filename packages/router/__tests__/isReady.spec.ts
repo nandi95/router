@@ -1,4 +1,5 @@
-import { createMemoryHistory, createRouter } from '../src'
+import { createMemoryHistory } from '../src/history/memory'
+import { createRouter } from '../src/router'
 import { components } from './utils'
 import type { RouteRecordRaw } from '../src/types'
 import { vi, describe, expect, it } from 'vitest'

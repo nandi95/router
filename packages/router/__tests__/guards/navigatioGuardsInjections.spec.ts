@@ -5,7 +5,8 @@ import { newRouter as createRouter } from '../utils'
 import { mount } from '@vue/test-utils'
 import { inject } from 'vue'
 import { mockWarn } from '../vitest-mock-warn'
-import { createMemoryHistory, type Router } from '../../src'
+import { createMemoryHistory } from '../../src/history/memory'
+import type { Router } from '../../src/router'
 import { describe, expect, it } from 'vitest'
 
 describe('inject() within navigation guards', () => {

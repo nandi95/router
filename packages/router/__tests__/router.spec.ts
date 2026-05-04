@@ -2,14 +2,12 @@
  * @vitest-environment happy-dom
  */
 import fakePromise from 'faked-promise'
-import type { RouteLocationRaw } from '../src'
-import {
-  createRouter,
-  createMemoryHistory,
-  createWebHistory,
-  createWebHashHistory,
-  loadRouteLocation,
-} from '../src'
+import type { RouteLocationRaw } from '../src/typed-routes'
+import { createRouter } from '../src/router'
+import { createMemoryHistory } from '../src/history/memory'
+import { createWebHistory } from '../src/history/html5'
+import { createWebHashHistory } from '../src/history/hash'
+import { loadRouteLocation } from '../src/navigationGuards'
 import { NavigationFailureType } from '../src/errors'
 import { components, tick, nextNavigation } from './utils'
 import type { RouteRecordRaw } from '../src/types'

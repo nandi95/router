@@ -1,7 +1,8 @@
 /**
  * @vitest-environment happy-dom
  */
-import { createRouter, createMemoryHistory } from '../../src'
+import { createRouter } from '../../src/router'
+import { createMemoryHistory } from '../../src/history/memory'
 import { createApp, defineComponent } from 'vue'
 import { vi, describe, expect, it } from 'vitest'
 

@@ -4,12 +4,6 @@
 import { RouterLink } from '../src/RouterLink'
 import type { RouteQueryAndHash, MatcherLocationRaw } from '../src/types'
 import { START_LOCATION_NORMALIZED } from '../src/location'
-import type {
-  RouterOptions,
-  RouteLocationNormalized,
-  RouteLocationResolved,
-} from '../src'
-import { createMemoryHistory } from '../src'
 import { createMockedRoute } from './mount'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
@@ -18,6 +12,12 @@ import { routerKey } from '../src/injectionSymbols'
 import { tick } from './utils'
 import { mount } from '@vue/test-utils'
 import { vi, describe, expect, it } from 'vitest'
+import type {
+  RouteLocationNormalized,
+  RouteLocationResolved,
+} from '../src/typed-routes'
+import { createMemoryHistory } from '../src/history/memory'
+import type { RouterOptions } from '../src/router'
 
 const records = {
   home: {} as RouteRecordNormalized,

@@ -1,7 +1,8 @@
 /**
  * @vitest-environment node
  */
-import { createRouter, createMemoryHistory } from '../src'
+import { createRouter } from '../src/router'
+import { createMemoryHistory } from '../src/history/memory'
 import type { Component } from 'vue'
 import { createSSRApp, resolveComponent } from 'vue'
 import {

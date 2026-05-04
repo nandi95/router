@@ -1,5 +1,6 @@
 import { describe, it } from 'vitest'
-import { createRouter, createWebHistory } from '../src'
+import { createRouter } from '../src/router'
+import { createWebHistory } from '../src/history/html5'
 import { defineComponent, h } from 'vue'
 
 describe('createRouter', () => {

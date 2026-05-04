@@ -11,7 +11,7 @@ import type {
   RouteLocationAsPathTypedList,
   RouteLocationAsStringTypedList,
   RouteLocationResolvedTypedList,
-} from '../src'
+} from '../src/typed-routes'
 
 // NOTE: A type allows us to make it work only in this test file
 // https://github.com/microsoft/TypeScript/issues/15300

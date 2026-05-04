@@ -1,5 +1,6 @@
 import fakePromise from 'faked-promise'
-import { createRouter as newRouter, createMemoryHistory } from '../src'
+import { createRouter as newRouter } from '../src/router'
+import { createMemoryHistory } from '../src/history/memory'
 import type { NavigationFailure } from '../src/errors'
 import {
   NavigationFailureType,
@@ -8,8 +9,9 @@ import {
   ErrorTypes,
 } from '../src/errors'
 import { components, tick } from './utils'
-import type { RouteRecordRaw, NavigationGuard } from '../src'
+import type { RouteRecordRaw } from '../src/types'
 import type {
+  NavigationGuard,
   RouteLocationRaw,
   RouteLocationNormalized,
 } from '../src/typed-routes'

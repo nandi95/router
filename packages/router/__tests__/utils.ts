@@ -6,15 +6,16 @@ import type {
 } from '../src/types'
 import type { ComponentOptions } from 'vue'
 import { h } from 'vue'
+import type { RouterOptions, Router } from '../src/router'
+import type { RouteRecordNormalized } from '../src/matcher/types'
 import type {
-  RouterOptions,
-  Router,
-  RouteRecordNormalized,
   NavigationGuard,
   RouteLocationNormalized,
-} from '../src'
-import { createWebHistory, createRouter, RouterView } from '../src'
-import type { _RouteRecordProps } from '../src/typed-routes'
+  _RouteRecordProps,
+} from '../src/typed-routes'
+import { createWebHistory } from '../src/history/html5'
+import { createRouter } from '../src/router'
+import { RouterView } from '../src/RouterView'
 import { type EXPERIMENTAL_Router } from '../src/experimental'
 
 export const tick = (time?: number) =>

@@ -1,13 +1,11 @@
 /**
  * @vitest-environment happy-dom
  */
-import {
-  createRouter,
-  createMemoryHistory,
-  onBeforeRouteUpdate,
-  RouterView,
-  type RouteRecordRaw,
-} from '../../src'
+import { createRouter } from '../../src/router'
+import { createMemoryHistory } from '../../src/history/memory'
+import { onBeforeRouteUpdate } from '../../src/navigationGuards'
+import { RouterView } from '../../src/RouterView'
+import type { RouteRecordRaw } from '../../src/types'
 import type { ComponentOptions, FunctionalComponent } from 'vue'
 import { defineComponent, h, onActivated, onDeactivated } from 'vue'
 import { mount } from '@vue/test-utils'

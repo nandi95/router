@@ -1,4 +1,6 @@
-import { createMemoryHistory, createRouter, createRouterMatcher } from '../src'
+import { createMemoryHistory } from '../src/history/memory'
+import { createRouter } from '../src/router'
+import { createRouterMatcher } from '../src/matcher'
 import type { FunctionalComponent } from 'vue'
 import { defineAsyncComponent, defineComponent, h } from 'vue'
 import { describe, expect, it } from 'vitest'

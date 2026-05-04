@@ -1,5 +1,6 @@
-import type { RouterHistory } from '../src'
-import { createMemoryHistory, createRouter } from '../src'
+import type { RouterHistory } from '../src/history/common'
+import { createMemoryHistory } from '../src/history/memory'
+import { createRouter } from '../src/router'
 import { tick } from './utils'
 import { describe, expect, it } from 'vitest'
 

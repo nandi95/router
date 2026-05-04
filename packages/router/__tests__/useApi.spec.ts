@@ -3,7 +3,9 @@
  */
 import { mount } from '@vue/test-utils'
 import { computed } from 'vue'
-import { useRoute, createRouter, createMemoryHistory } from '../src'
+import { useRoute } from '../src/useApi'
+import { createRouter } from '../src/router'
+import { createMemoryHistory } from '../src/history/memory'
 import { describe, expect, it } from 'vitest'
 
 describe('use apis', () => {

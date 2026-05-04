@@ -1,7 +1,8 @@
 /**
  * @vitest-environment happy-dom
  */
-import { createRouter, createWebHistory } from '../src'
+import { createRouter } from '../src/router'
+import { createWebHistory } from '../src/history/html5'
 import { components, nextNavigation } from './utils'
 import type { RouteRecordRaw } from '../src/types'
 import type { Window as HappyDomWindow } from 'happy-dom'

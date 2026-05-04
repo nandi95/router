@@ -4,7 +4,7 @@ import {
   routeLocationKey,
   routerViewLocationKey,
 } from '../src/injectionSymbols'
-import type { RouteLocationNormalized } from '../src'
+import type { RouteLocationNormalized } from '../src/typed-routes'
 
 export function createMockedRoute(
   initialValue: RouteLocationNormalizedLoose | RouteLocationNormalized

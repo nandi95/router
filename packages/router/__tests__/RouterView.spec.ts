@@ -8,7 +8,7 @@ import { START_LOCATION_NORMALIZED } from '../src/location'
 import { markRaw } from 'vue'
 import { createMockedRoute } from './mount'
 import { mount } from '@vue/test-utils'
-import type { RouteLocationNormalized } from '../src'
+import type { RouteLocationNormalized } from '../src/typed-routes'
 import { describe, expect, it } from 'vitest'
 import { mockWarn } from './vitest-mock-warn'
 

@@ -3,7 +3,8 @@
  */
 import fakePromise from 'faked-promise'
 import { noGuard, newRouter as createRouter } from '../utils'
-import type { RouteRecordRaw, NavigationGuard } from '../../src'
+import type { RouteRecordRaw } from '../../src/types'
+import type { NavigationGuard } from '../../src/typed-routes'
 import { vi, describe, expect, it, beforeEach } from 'vitest'
 
 const Home = { template: `<div>Home</div>` }

@@ -1,5 +1,6 @@
 import fakePromise from 'faked-promise'
-import { createRouter, createMemoryHistory } from '../src'
+import { createRouter } from '../src/router'
+import { createMemoryHistory } from '../src/history/memory'
 import type { RouterOptions } from '../src/router'
 import type { RouteComponent } from '../src/types'
 import { ticks } from './utils'

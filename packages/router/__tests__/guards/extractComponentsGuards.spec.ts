@@ -1,5 +1,6 @@
 import { extractComponentsGuards } from '../../src/navigationGuards'
-import type { RouteRecordRaw, RouteRecordNormalized } from '../../src'
+import type { RouteRecordRaw } from '../../src/types'
+import type { RouteRecordNormalized } from '../../src/matcher/types'
 import { START_LOCATION_NORMALIZED } from '../../src/location'
 import { components } from '../utils'
 import { normalizeRouteRecord } from '../../src/matcher'
