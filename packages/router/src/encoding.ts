@@ -20,6 +20,11 @@ import { diagnostics } from './diagnostics'
 // const EXTRA_RESERVED_RE = /[!'()*]/g
 // const encodeReservedReplacer = (c: string) => '%' + c.charCodeAt(0).toString(16)
 
+/**
+ * NOTE: `replaceAll()` is not faster than `replace()` with a global RegExp.
+ * Benchmarks do not show a clear benefit for these simple replacements:
+ * https://github.com/mathiasbynens/string-prototype-replace-regexp-benchmark
+ */
 const HASH_RE = /#/g // %23
 const AMPERSAND_RE = /&/g // %26
 export const SLASH_RE = /\//g // %2F
