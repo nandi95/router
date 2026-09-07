@@ -23,6 +23,8 @@ VueRouter({
 
 Routes modified this way will be reflected in the generated `typed-router.d.ts` file.
 
+`beforeWriteFiles()` also exposes pass-through route nodes created by folders that only contain child routes. This lets you [configure a parent route without adding a component](./file-based-routing#configuring-parent-routes-without-a-component), including [route groups](./file-based-routing#adding-options-to-a-route-group).
+
 ## In-Component Routing
 
 It's possible to override the route configuration directly in the page component file. These changes are picked up by the plugin and reflected in the generated `typed-router.d.ts` file.

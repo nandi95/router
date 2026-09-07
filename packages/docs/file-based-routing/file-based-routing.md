@@ -74,6 +74,27 @@ const routes = [
 
 Note the folder and file's name `users/` could be any valid naming like `my-[id]-param/`.
 
+#### Parent components inside route folders
+
+Instead of placing the parent component next to its route folder, you can name it `_parent.vue` and place it inside the folder:
+
+```text
+src/pages/
+└── users/
+    ├── _parent.vue
+    └── index.vue
+```
+
+Here, `users/_parent.vue` is the parent component for the `users` route and must contain a `<RouterView>` to render `users/index.vue`. It provides the same layout nesting as the preceding example with `users.vue`, but keeps the parent component together with its children. A route created by `_parent.vue` is anonymous by default, so only its children appear as navigable typed routes. Like other page components, `_parent.vue` can use [`definePage()`](./extending-routes#definepage) to configure its route record.
+
+Do not define both `users.vue` and `users/_parent.vue` because they represent the same parent component.
+
+#### Configuring parent routes without a component
+
+A folder that only contains child routes still creates a _pass-through_ route node during generation. If you only need to add route options such as `meta`, you can keep the parent componentless and configure that node using [`beforeWriteFiles()`](./extending-routes#extending-routes-in-config).
+
+This behavior applies to any folder-only parent, including [route groups](#adding-options-to-a-route-group).
+
 #### Nested routes without nesting layouts
 
 Sometimes you might want to add _nesting to the URL_ in the form of slashes but you don't want it to impact your UI hierarchy. Consider the following folder structure:
@@ -133,6 +154,28 @@ Resulting URLs:
 ```
 
 This approach allows you to organize your files for better maintainability without changing the structure of your application's routes.
+
+### Adding options to a route group
+
+Since a route group is represented by a pass-through route node, you can use `beforeWriteFiles()` to add options that apply to all of its children. For example, you can require authentication for the `(admin)` group from the preceding example:
+
+```ts
+import VueRouter from 'vue-router/vite'
+
+VueRouter({
+  beforeWriteFiles(root) {
+    for (const route of root) {
+      if (route.isPassThrough && route.name === '/(admin)') {
+        route.addToMeta({
+          requiresAuth: true,
+        })
+      }
+    }
+  },
+})
+```
+
+With the default generated route names, this adds the metadata to the group record, making `requiresAuth` available through `route.meta` on both `/dashboard` and `/settings`. The same approach works with regular folders that do not have a parent component.
 
 You can also use route groups in page components. This is equivalent to naming the page component `index.vue`:
 
